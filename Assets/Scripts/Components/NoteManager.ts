@@ -234,6 +234,11 @@ export class NoteManager extends BaseScriptComponent {
   @hint("Logs pointer-ray and orb hover activity. Development aid only.")
   logHover: boolean = false
 
+  @input
+  @widget(new SliderWidget(1, 20, 1))
+  @hint("Frames a removed orb stays alive, hidden, before its SceneObject is destroyed. Lets SIK's cursor cache drop it first.")
+  destroyDelayFrames: number = 5
+
   private store: NoteStore = new NoteStore()
   private speech: SpeechService | null = null
   private mic: MicAmplitude | null = null
@@ -251,6 +256,21 @@ export class NoteManager extends BaseScriptComponent {
    */
   private orbList: NoteOrb[] = []
   private orbListDirty: boolean = true
+
+  /**
+   * Orbs hidden and awaiting destruction.
+   *
+   * Releasing the Interactable removes it from SIK's registry, but the cursor
+   * also keeps its own cone cache of interactables for a frame or two and
+   * dereferences those entries while scoring hover targets. Destroying the
+   * SceneObject in the same frame leaves a destroyed component in that cache and
+   * the next scoring pass throws "Object is null".
+   *
+   * Disabling first makes the orb inert and invisible immediately, which is all
+   * the user needs to see; the SceneObject stays alive — and therefore safe to
+   * dereference — for the few frames SIK needs to evict it.
+   */
+  private pendingDestroy: { object: SceneObject; frames: number }[] = []
   private recordingOrb: NoteOrb | null = null
   private selectedOrb: NoteOrb | null = null
   private recordingPosition: vec3 = vec3.zero()
@@ -665,7 +685,7 @@ export class NoteManager extends BaseScriptComponent {
     }
 
     if (orb !== null) {
-      orb.getSceneObject().destroy()
+      this.retireOrb(orb)
     }
   }
 
@@ -778,6 +798,39 @@ export class NoteManager extends BaseScriptComponent {
         " hit=" +
         (hit ? "YES" : "no")
     )
+  }
+
+  /**
+   * Retires an orb: releases its SIK registrations, hides it now, and destroys
+   * the SceneObject a few frames later. See `pendingDestroy`.
+   */
+  private retireOrb(orb: NoteOrb): void {
+    orb.dispose()
+
+    const object = orb.getSceneObject()
+    object.enabled = false
+
+    this.pendingDestroy.push({ object: object, frames: this.destroyDelayFrames })
+  }
+
+  /** Destroys orbs whose grace period has elapsed. Call once per frame. */
+  private advancePendingDestroys(): void {
+    for (let i = this.pendingDestroy.length - 1; i >= 0; i--) {
+      const entry = this.pendingDestroy[i]
+      entry.frames -= 1
+
+      if (entry.frames > 0) {
+        continue
+      }
+
+      this.pendingDestroy.splice(i, 1)
+
+      try {
+        entry.object.destroy()
+      } catch (e) {
+        print("[NoteManager] Failed to destroy a retired orb: " + e)
+      }
+    }
   }
 
   /** Flat list of live orbs, rebuilt only after the collection changes. */
@@ -1034,6 +1087,7 @@ export class NoteManager extends BaseScriptComponent {
     }
 
     this.pinch.update(dt)
+    this.advancePendingDestroys()
     this.updateHover()
 
     const simulatedLevel = this.advanceSimulation(dt)
@@ -1176,7 +1230,7 @@ export class NoteManager extends BaseScriptComponent {
     const orb = this.orbs[noteId]
 
     if (orb !== null && orb !== undefined) {
-      orb.getSceneObject().destroy()
+      this.retireOrb(orb)
       delete this.orbs[noteId]
       this.orbListDirty = true
     }
@@ -1191,7 +1245,7 @@ export class NoteManager extends BaseScriptComponent {
     for (let i = 0; i < ids.length; i++) {
       const orb = this.orbs[ids[i]]
       if (orb !== null && orb !== undefined) {
-        orb.getSceneObject().destroy()
+        this.retireOrb(orb)
       }
     }
 

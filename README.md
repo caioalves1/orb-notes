@@ -615,6 +615,39 @@ packages. `AGENTS.md` forbids editing it and Lens Studio regenerates it, so it
 is safe to delete manually if you want the disk space back; none of it ships in
 the Lens.
 
+## Destroying an orb: two-stage teardown
+
+Removing a note (Close task, or a recording that captured no speech) used to
+spam the log every frame, forever:
+
+```
+UpdateDispatcher: Error in event "CursorViewModelUpdate_32"
+Error: Exception in HostFunction: Object is null
+```
+
+SIK's cursor dereferences registered Interactables while scoring hover targets,
+and destroying the orb's SceneObject left destroyed components in two places it
+reads from. SIK's own guard does not catch it: `InteractionManager.getParentPlane`
+tests `isNull(interactable.sceneObject)`, but reading `.sceneObject` on a
+*destroyed component* throws before the guard can run
+(`InteractionManager.ts:278`). `InteractableScoring.ts:246` has no guard at all.
+
+So `NoteManager.retireOrb()` retires an orb in two stages:
+
+1. **`orb.dispose()`** destroys its Interactables. That fires their
+   `OnDestroyEvent`, which deregisters them from `InteractionManager`
+   synchronously — this alone stopped the repeating error.
+2. **Disable now, destroy later.** The cursor also keeps its own cone cache for
+   a frame or two, which deregistration does not touch, and one straggler still
+   threw from the cache path. Disabling makes the orb inert and invisible
+   immediately — all the user needs to see — while the SceneObject stays alive,
+   and therefore safe to dereference, for `destroyDelayFrames` (5) until SIK has
+   evicted it.
+
+Verified by reproducing the exact failing path: three consecutive discards,
+zero errors, and all three SceneObjects confirmed destroyed afterwards — so the
+delay defers cleanup without leaking.
+
 ## Known gaps
 
 - **Cross-session placement accuracy is unverified on hardware.** See above.

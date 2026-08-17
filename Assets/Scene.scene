@@ -2873,6 +2873,7 @@
     debugRecordSeconds: true
     debugClearNotesOnStart: true
     logHover: true
+    destroyDelayFrames: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2917,6 +2918,7 @@
       debugRecordSeconds: !<float> 3.000000
       debugClearNotesOnStart: false
       logHover: false
+      destroyDelayFrames: !<float> 5.000000
   ScriptTypes:
     "":
       {}

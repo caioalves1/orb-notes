@@ -306,6 +306,8 @@ export class NoteOrb extends BaseScriptComponent {
   private doneHandler: ((orb: NoteOrb) => void) | null = null
   /** Hover reported by SIK's Interactable, independent of the ray fallback. */
   private sikHovered: boolean = false
+  /** Interactable resolved on this orb, retained so it can be released. */
+  private resolvedInteractable: Interactable | null = null
   private doneHovered: boolean = false
   private doneHoverAmount: number = 0
   private doneMaterial: Material | null = null
@@ -592,6 +594,8 @@ export class NoteOrb extends BaseScriptComponent {
       return
     }
 
+    this.resolvedInteractable = target
+
     target.onTriggerEnd.add(() => {
       if (this.clickHandler !== null) {
         this.clickHandler(this)
@@ -628,6 +632,44 @@ export class NoteOrb extends BaseScriptComponent {
         this.doneHandler(this)
       }
     })
+  }
+
+  /**
+   * Releases this orb's SIK registrations. Must run before the SceneObject is
+   * destroyed.
+   *
+   * SIK's cursor keeps its own set of Interactables and dereferences them every
+   * frame while scoring hover targets. Destroying the SceneObject out from under
+   * it leaves destroyed components in that set, and the next scoring pass throws
+   * "Exception in HostFunction: Object is null" — every frame, forever, because
+   * the dangling entry is never cleaned up.
+   *
+   * SIK's own guard does not catch this: InteractionManager.getParentPlane tests
+   * `isNull(interactable.sceneObject)`, but reading `.sceneObject` on a
+   * *destroyed component* throws before the guard can evaluate.
+   *
+   * Destroying the Interactable first fires its OnDestroyEvent, which
+   * deregisters it synchronously, so nothing dangling is left behind.
+   */
+  dispose(): void {
+    this.releaseInteractable(this.resolvedInteractable)
+    this.releaseInteractable(this.doneButton)
+    this.resolvedInteractable = null
+  }
+
+  private releaseInteractable(target: Interactable | null): void {
+    if (target === null || target === undefined) {
+      return
+    }
+
+    try {
+      const component = target as unknown as Component
+      if (typeof component.destroy === "function") {
+        component.destroy()
+      }
+    } catch (e) {
+      print("[NoteOrb] Could not release an Interactable: " + e)
+    }
   }
 
   /** Registers the handler for the Done / delete action. */

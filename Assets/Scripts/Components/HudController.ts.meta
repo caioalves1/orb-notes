@@ -1,0 +1,83 @@
+- !<AssetImportMetadata/2c1ab0a4-1ce5-4431-8d47-1780cebff353>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 13b1332a-c086-483f-b514-4ba674d1bc5c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 13b1332a-c086-483f-b514-4ba674d1bc5c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 06191c6b-4c76-406e-81a5-c698f5d5cbd2
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/06191c6b-4c76-406e-81a5-c698f5d5cbd2>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 305b5622-5de2-4c74-9848-710f77f4739b
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    alertLabel: false
+    alertMaxSeconds: false
+    alertRoot: false
+    dismissAfterSeenSeconds: false
+    dueLabel: false
+    duePluralCopy: false
+    dueSingularCopy: false
+    indicator: false
+    onboardingCopy: false
+    onboardingLabel: false
+    onboardingRoot: false
+    overdueCopy: false
+    transientDurationSeconds: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - onboardingRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      onboardingLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      alertRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      alertLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      indicator: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      dueLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      onboardingCopy: Pinch and hold to record a task
+      dismissAfterSeenSeconds: !<float> 1.000000
+      alertMaxSeconds: !<float> 120.000000
+      transientDurationSeconds: 2.500000
+      dueSingularCopy: 1 note is due
+      duePluralCopy: "{n} notes are due"
+      overdueCopy: past due
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject onboardingRoot {"hint":"Onboarding panel, shown at launch."}'
+    - '// @input Component.Text onboardingLabel {"hint":"Onboarding copy."}'
+    - '// @input SceneObject alertRoot {"hint":"Alert panel, shown when a reminder fires."}'
+    - '// @input Component.Text alertLabel {"hint":"Alert copy."}'
+    - '// @input AssignableType_1 indicator {"hint":"Arrow that points toward the alerting note."}'
+    - '// @input Component.Text dueLabel {"hint":"Label beside the direction arrow, naming how many notes are due."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input string onboardingCopy = "Pinch and hold to record a task" {"hint":"Instructional copy shown at launch."}'
+    - '// @input float dismissAfterSeenSeconds = 1 {"hint":"Seconds the alerting note must be in view before the alert clears.", "widget":"slider", "min":0.2, "max":5, "step":0.1}'
+    - '// @input float alertMaxSeconds = 120 {"hint":"Absolute cap, in seconds, so a note that can never be found does not pin the HUD forever.", "widget":"slider", "min":5, "max":300, "step":5}'
+    - '// @input float transientDurationSeconds = 2.5 {"hint":"Seconds a transient message stays on screen.", "widget":"slider", "min":1, "max":10, "step":0.5}'
+    - '// @input string dueSingularCopy = "1 note is due" {"hint":"Copy beside the arrow for a single due note. {n} is the count."}'
+    - '// @input string duePluralCopy = "{n} notes are due" {"hint":"Copy beside the arrow for several due notes. {n} is the count."}'
+    - '// @input string overdueCopy = "past due" {"hint":"Copy beside the arrow when a due note is also overdue."}'

@@ -1,0 +1,200 @@
+- !<AssetImportMetadata/1b1c97f0-5d91-4cd1-8bf6-9ba5fc20790f>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 47b11fac-7ea9-45ef-bc8e-ee94e730b044
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 47b11fac-7ea9-45ef-bc8e-ee94e730b044
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> bb87b254-111f-4cd6-9965-b5d95ef88697
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/bb87b254-111f-4cd6-9965-b5d95ef88697>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: fef2247d-834c-4906-a387-39fe4c3c08a7
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audioEmissionResponse: false
+    audioFollowRate: false
+    audioIdleLevel: false
+    audioSensitivity: false
+    basePulseHz: false
+    baseRadius: false
+    billboardPanels: false
+    clickRadius: false
+    core: false
+    coreSpinSpeed: false
+    doneButton: false
+    doneButtonRoot: false
+    doneClickRadius: false
+    doneHoverColor: false
+    doneHoverScale: false
+    doneIdleColor: false
+    donePlate: false
+    glow: false
+    glowDistance: false
+    glowEnabled: false
+    glowFalloff: false
+    glowIntensityScale: false
+    hoverEmissionBoost: false
+    hoverScaleBoost: false
+    infoPanel: false
+    innerScale: false
+    innerSpinSpeed: false
+    innerVisual: false
+    interactable: false
+    logHover: false
+    meshAmplitude: false
+    meshNoiseScale: false
+    meshOctaves: false
+    meshSubdivisions: false
+    noiseScale: false
+    noiseSpeed: false
+    recordingScaleBoost: false
+    recordingSpinBoost: false
+    rimExponent: false
+    rimIntensity: false
+    timeLabel: false
+    transcriptPanel: false
+    transcriptText: false
+    urgentPulseHz: false
+    useDisplacedMesh: false
+    visualRoot: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - visualRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      core: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      glow: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      transcriptText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      transcriptPanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      infoPanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      timeLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      doneButton: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      doneButtonRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      donePlate: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+      doneIdleColor: !<Vec4> {x: 0.120000, y: 0.160000, z: 0.240000, w: 0.850000}
+      doneHoverColor: !<Vec4> {x: 0.300000, y: 0.550000, z: 0.950000, w: 0.950000}
+      doneHoverScale: 1.120000
+      doneClickRadius: 3.200000
+      billboardPanels: true
+      interactable: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      clickRadius: !<float> 5.000000
+      hoverEmissionBoost: 0.700000
+      hoverScaleBoost: 0.120000
+      logHover: false
+      baseRadius: !<float> 3.000000
+      recordingScaleBoost: 0.550000
+      rimIntensity: !<float> 2.000000
+      rimExponent: 2.200000
+      glowDistance: 0.850000
+      glowFalloff: 2.500000
+      glowIntensityScale: 0.350000
+      glowEnabled: true
+      noiseScale: 1.600000
+      noiseSpeed: 0.700000
+      useDisplacedMesh: true
+      meshSubdivisions: !<float> 3.000000
+      meshNoiseScale: 1.900000
+      meshOctaves: !<float> 4.000000
+      meshAmplitude: 0.220000
+      innerVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      innerScale: 0.740000
+      coreSpinSpeed: !<float> 9.000000
+      innerSpinSpeed: !<float> -14.000000
+      recordingSpinBoost: 2.500000
+      audioSensitivity: 1.400000
+      audioEmissionResponse: 2.600000
+      audioFollowRate: !<float> 22.000000
+      audioIdleLevel: 0.350000
+      basePulseHz: 0.250000
+      urgentPulseHz: 1.400000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject visualRoot {"hint":"Child holding the Core and Glow shells. Scaled by the orb animation."}'
+    - '// @input Component.RenderMeshVisual core {"hint":"Inner sphere carrying the note colour and fresnel rim."}'
+    - '// @input Component.RenderMeshVisual glow {"hint":"Outer sphere carrying the glow halo."}'
+    - '// @input Component.Text transcriptText {"hint":"Text panel showing the transcript. Optional."}'
+    - '// @input SceneObject transcriptPanel {"hint":"Object holding the transcript panel. Shown while recording, then only when the orb is clicked."}'
+    - '// @input SceneObject infoPanel {"hint":"Panel with the countdown and the Done button. Shown only while the orb is selected."}'
+    - '// @input Component.Text timeLabel {"hint":"Label showing how long is left before the reminder."}'
+    - '// @input AssignableType_1 doneButton {"hint":"Interactable that deletes / completes this note."}'
+    - '// @input SceneObject doneButtonRoot {"hint":"Object holding the Done button, used as its hit target and hover visual."}'
+    - '// @input Component.MaterialMeshVisual donePlate {"hint":"Plate behind the Done label, tinted and scaled on hover."}'
+    - '// @input vec4 doneIdleColor = {0.12,0.16,0.24,0.85} {"hint":"Done button colour when idle.", "widget":"color"}'
+    - '// @input vec4 doneHoverColor = {0.3,0.55,0.95,0.95} {"hint":"Done button colour while hovered.", "widget":"color"}'
+    - '// @input float doneHoverScale = 1.12 {"hint":"Done button scale multiplier while hovered.", "widget":"slider", "min":1, "max":1.5, "step":0.01}'
+    - "// @input float doneClickRadius = 4.5 {\"hint\":\"Radius of the Done button's hit target, in centimetres. Match it to the plate width so the button is as easy to hit as it looks.\", \"widget\":\"slider\", \"min\":1, \"max\":12, \"step\":0.5}"
+    - '// @ui {"widget":"separator"}'
+    - '// @input bool billboardPanels = true {"hint":"Keep the transcript and info panels turned toward the user."}'
+    - '// @input AssignableType_2 interactable {"hint":"Interactable that makes the orb clickable. Defaults to one on this object."}'
+    - "// @input float clickRadius = 3.6 {\"hint\":\"Radius of the click target, in centimetres. Should roughly match the orb's own size.\", \"widget\":\"slider\", \"min\":1, \"max\":20, \"step\":0.5}"
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Hover feedback"}'
+    - '// @input float hoverEmissionBoost = 1.1 {"hint":"Extra emission while the pointer is over the orb, so it reads as clickable.", "widget":"slider", "min":0, "max":2, "step":0.05}'
+    - '// @input float hoverScaleBoost = 0.25 {"hint":"Extra size while hovered, as a fraction of the orb radius.", "widget":"slider", "min":0, "max":0.5, "step":0.01}'
+    - '// @input bool logHover {"hint":"Print hover enter/exit to the log. Development aid only."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Orb form"}'
+    - '// @input float baseRadius = 3 {"hint":"Resting radius of the orb, in centimetres.", "widget":"slider", "min":0.5, "max":20, "step":0.5}'
+    - '// @input float recordingScaleBoost = 0.85 {"hint":"Extra radius at full mic amplitude while recording.", "widget":"slider", "min":0, "max":2, "step":0.05}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Glow and rim"}'
+    - '// @input float rimIntensity = 2 {"hint":"Emission strength of the rim highlight.", "widget":"slider", "min":0, "max":10, "step":0.1}'
+    - '// @input float rimExponent = 2.2 {"hint":"Fresnel falloff power. Higher values give a tighter rim.", "widget":"slider", "min":0, "max":10, "step":0.1}'
+    - '// @input float glowDistance = 0.28 {"hint":"How far the outer glow reaches past the core. Keep low so the halo stays behind the core.", "widget":"slider", "min":0, "max":10, "step":0.05}'
+    - '// @input float glowFalloff = 7 {"hint":"Outer glow falloff. Higher is a softer, smoother fade.", "widget":"slider", "min":0, "max":10, "step":0.1}'
+    - '// @input float glowIntensityScale = 0.35 {"hint":"Overall glow strength relative to the core. Below 1 keeps the core and inner shell dominant.", "widget":"slider", "min":0, "max":2, "step":0.01}'
+    - '// @input bool glowEnabled = true {"hint":"Turn the outer glow off entirely. The orb reads well without it."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Noise"}'
+    - '// @input float noiseScale = 1.6 {"hint":"Amplitude of the organic wobble applied to shape and glow.", "widget":"slider", "min":0, "max":8, "step":0.1}'
+    - '// @input float noiseSpeed = 0.7 {"hint":"Rate of the noise animation.", "widget":"slider", "min":0, "max":5, "step":0.05}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Displaced geometry"}'
+    - '// @input bool useDisplacedMesh = true {"hint":"Replace the smooth spheres with noise-displaced meshes. This is what makes the orb read as 3D."}'
+    - '// @input float meshSubdivisions = 3 {"hint":"Icosphere subdivisions. 2 is 162 verts, 3 is 642. Higher is smoother and costlier.", "widget":"slider", "min":0, "max":4, "step":1}'
+    - '// @input float meshNoiseScale = 1.9 {"hint":"Spatial frequency of the displacement noise. Higher gives finer detail.", "widget":"slider", "min":0.2, "max":8, "step":0.1}'
+    - '// @input float meshOctaves = 4 {"hint":"Fbm octaves in the displacement.", "widget":"slider", "min":1, "max":6, "step":1}'
+    - '// @input float meshAmplitude = 0.22 {"hint":"Displacement depth as a fraction of radius. 0 is a smooth sphere.", "widget":"slider", "min":0, "max":0.6, "step":0.01}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Inner shell"}'
+    - '// @input Component.RenderMeshVisual innerVisual {"hint":"Second displaced shell that counter-rotates inside the core, for parallax depth."}'
+    - '// @input float innerScale = 0.74 {"hint":"Inner shell radius, as a fraction of the core.", "widget":"slider", "min":0.2, "max":1, "step":0.01}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Rotation"}'
+    - '// @input float coreSpinSpeed = 9 {"hint":"Core rotation speed in degrees/second. Rotation is only visible once the mesh is displaced.", "widget":"slider", "min":0, "max":90, "step":1}'
+    - '// @input float innerSpinSpeed = -14 {"hint":"Inner shell rotation speed in degrees/second. Opposite sign reads as depth.", "widget":"slider", "min":-90, "max":90, "step":1}'
+    - '// @input float recordingSpinBoost = 2.5 {"hint":"Extra spin multiplier at full mic amplitude while recording.", "widget":"slider", "min":0, "max":4, "step":0.1}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Audio reactivity"}'
+    - "// @input float audioSensitivity = 1.3 {\"hint\":\"Multiplier applied to mic amplitude while recording. Combined with NoteManager's own multiplier; too high pins the level at maximum and the orb stops varying.\", \"widget\":\"slider\", \"min\":0, \"max\":8, \"step\":0.1}"
+    - '// @input float audioEmissionResponse = 2.6 {"hint":"How much mic amplitude drives emission while recording.", "widget":"slider", "min":0, "max":6, "step":0.1}'
+    - '// @input float audioFollowRate = 22 {"hint":"How quickly the orb follows the mic. Higher is snappier.", "widget":"slider", "min":1, "max":40, "step":1}'
+    - '// @input float audioIdleLevel = 0.12 {"hint":"Minimum audio level while recording, so a silent orb still reads as live. Keep low or there is no headroom left for speech to show.", "widget":"slider", "min":0, "max":1, "step":0.01}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Pulse"}'
+    - '// @input float basePulseHz = 0.25 {"hint":"Glow pulse rate, in Hz, for a note that is not yet urgent.", "widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float urgentPulseHz = 1.4 {"hint":"Glow pulse rate, in Hz, for a note that is due now.", "widget":"slider", "min":0, "max":4, "step":0.05}'

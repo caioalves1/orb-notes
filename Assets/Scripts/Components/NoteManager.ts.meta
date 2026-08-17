@@ -1,0 +1,181 @@
+- !<AssetImportMetadata/224f5901-1089-4153-b0ef-8ffa60f47cbb>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 183b80d1-32a2-4270-8ae2-a1ca3d6a8ac6
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 183b80d1-32a2-4270-8ae2-a1ca3d6a8ac6
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> abf8c1b1-99d1-417e-8a8e-19e666aaff0d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/abf8c1b1-99d1-417e-8a8e-19e666aaff0d>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 19a4b650-444a-423a-be73-51c8c1224ca9
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    alertCopy: false
+    asrModule: false
+    audioSensitivity: false
+    camera: false
+    colorDay: false
+    colorDue: false
+    colorHour: false
+    colorWeek: false
+    dayThresholdMinutes: false
+    debugClearNotesOnStart: false
+    debugRecordSeconds: false
+    debugSimulateCapture: false
+    hourThresholdMinutes: false
+    hud: false
+    intensityDay: false
+    intensityDue: false
+    intensityHour: false
+    intensityWeek: false
+    logHover: false
+    micHoldSeconds: false
+    microphoneTrack: false
+    minRecordSeconds: false
+    noSpeechCopy: false
+    orbClickRadius: false
+    orbContainer: false
+    orbTemplate: false
+    overdueAfterMinutes: false
+    placementForwardOffset: false
+    promptDropDistance: false
+    rayPlacementDistance: false
+    recordingColor: false
+    recordingIntensity: false
+    recordingSilenceMs: false
+    reminderCheckSeconds: false
+    reminderPrompt: false
+    settledIntensity: false
+    speechPulseSeconds: false
+    staticColor: false
+    staticIntensity: false
+    weekThresholdMinutes: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - orbTemplate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      orbContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      hud: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      reminderPrompt: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      asrModule: !<reference.Asset> 00000000-0000-0000-0000-000000000000
+      microphoneTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      audioSensitivity: 1.400000
+      micHoldSeconds: 0.350000
+      recordingSilenceMs: !<float> 10000.000000
+      speechPulseSeconds: 0.800000
+      minRecordSeconds: 0.600000
+      placementForwardOffset: !<float> 0.000000
+      promptDropDistance: !<float> 22.000000
+      rayPlacementDistance: !<float> 60.000000
+      orbClickRadius: !<float> 7.000000
+      recordingColor: !<Vec4> {x: 0.350000, y: 0.950000, z: 0.750000, w: 1.000000}
+      staticColor: !<Vec4> {x: 0.300000, y: 0.900000, z: 0.500000, w: 1.000000}
+      colorWeek: !<Vec4> {x: 0.250000, y: 0.550000, z: 1.000000, w: 1.000000}
+      colorDay: !<Vec4> {x: 0.200000, y: 0.900000, z: 0.850000, w: 1.000000}
+      colorHour: !<Vec4> {x: 1.000000, y: 0.820000, z: 0.200000, w: 1.000000}
+      colorDue: !<Vec4> {x: 1.000000, y: 0.250000, z: 0.200000, w: 1.000000}
+      weekThresholdMinutes: !<float> 10080.000000
+      dayThresholdMinutes: !<float> 1440.000000
+      hourThresholdMinutes: !<float> 60.000000
+      recordingIntensity: !<float> 1.000000
+      settledIntensity: !<float> 1.000000
+      staticIntensity: 1.500000
+      intensityWeek: 1.600000
+      intensityDay: 1.400000
+      intensityHour: 1.200000
+      intensityDue: !<float> 1.000000
+      reminderCheckSeconds: !<float> 1.000000
+      alertCopy: "Reminder: {note}"
+      noSpeechCopy: "Didn't catch that — nothing saved"
+      overdueAfterMinutes: !<float> 1.000000
+      debugSimulateCapture: false
+      debugRecordSeconds: !<float> 3.000000
+      debugClearNotesOnStart: false
+      logHover: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"Scene references"}'
+    - '// @input SceneObject orbTemplate {"hint":"Disabled template cloned for every note orb."}'
+    - '// @input SceneObject orbContainer {"hint":"Parent for spawned orbs. Must not move, so world positions stay valid."}'
+    - '// @input AssignableType_1 hud {"hint":"HUD controller for onboarding, alerts and the directional indicator."}'
+    - '// @input AssignableType_2 reminderPrompt {"hint":"Reminder time prompt."}'
+    - '// @input Component.Camera camera {"hint":"Camera used for placement and facing. Defaults to the main camera."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Speech and audio"}'
+    - '// @input Asset.Asset asrModule {"hint":"AsrModule asset. Leave empty to resolve it at runtime."}'
+    - '// @input Asset.AudioTrackAsset microphoneTrack {"hint":"Microphone audio track, for driving the orb from mic amplitude."}'
+    - "// @input float audioSensitivity = 1 {\"hint\":\"Multiplier applied to mic amplitude before it reaches the orb. Compounds with the orb's own sensitivity — keep the product near 1 so the signal has headroom to vary.\", \"widget\":\"slider\", \"min\":0, \"max\":10, \"step\":0.1}"
+    - '// @input float micHoldSeconds = 1 {"hint":"How long a mic reading is held when no new audio frame arrives. The provider delivers sparse bursts, so this keeps the orb alive between them.", "widget":"slider", "min":0.05, "max":1, "step":0.05}'
+    - '// @input float recordingSilenceMs = 10000 {"hint":"Recognizer silence window while recording a note. The recording itself only ends on release; this just splits it into segments.", "widget":"slider", "min":1000, "max":30000, "step":500}'
+    - '// @input float speechPulseSeconds = 0.8 {"hint":"Seconds a burst of recognised speech keeps the orb energised. Covers the microphone being starved while ASR holds it.", "widget":"slider", "min":0, "max":3, "step":0.05}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Interaction"}'
+    - '// @input float minRecordSeconds = 0.6 {"hint":"Recording starts on press. A press shorter than this is discarded as a miss click.", "widget":"slider", "min":0.1, "max":3, "step":0.05}'
+    - '// @input float placementForwardOffset {"hint":"Distance in front of the pinch to place the orb, in centimetres.", "widget":"slider", "min":0, "max":60, "step":1}'
+    - '// @input float promptDropDistance = 22 {"hint":"How far below the orb the reminder prompt appears, in centimetres.", "widget":"slider", "min":5, "max":60, "step":1}'
+    - '// @input float rayPlacementDistance = 60 {"hint":"Placement distance along the pointer ray when there is no tracked hand (mouse, mobile).", "widget":"slider", "min":20, "max":200, "step":5}'
+    - "// @input float orbClickRadius = 4 {\"hint\":\"How close the pointer ray must pass to an orb to select it, in centimetres. Keep it close to the orb's own radius.\", \"widget\":\"slider\", \"min\":1, \"max\":30, \"step\":0.5}"
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Colours"}'
+    - '// @input vec4 recordingColor = {0.35,0.95,0.75,1} {"hint":"Colour while recording and settling.", "widget":"color"}'
+    - '// @input vec4 staticColor = {0.3,0.9,0.5,1} {"hint":"Colour for notes with no reminder. Static, never animates.", "widget":"color"}'
+    - '// @input vec4 colorWeek = {0.25,0.55,1,1} {"hint":"More than a week away. Flat above the week threshold.", "widget":"color"}'
+    - '// @input vec4 colorDay = {0.2,0.9,0.85,1} {"hint":"One day away. Week blends to Day between the week and day thresholds.", "widget":"color"}'
+    - '// @input vec4 colorHour = {1,0.82,0.2,1} {"hint":"One hour away. Day blends to Hour between the day and hour thresholds.", "widget":"color"}'
+    - '// @input vec4 colorDue = {1,0.25,0.2,1} {"hint":"Due. Hour blends to Due over the final hour, and past-due notes stay here.", "widget":"color"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Urgency thresholds"}'
+    - '// @ui {"widget":"label", "label":"Blending runs A -> B -> C -> D as the remaining time crosses each threshold."}'
+    - '// @input float weekThresholdMinutes = 10080 {"hint":"Minutes remaining above which a note stays flat at Colour A. Default 10080 = one week.", "widget":"slider", "min":60, "max":43200, "step":60}'
+    - '// @input float dayThresholdMinutes = 1440 {"hint":"Minutes remaining at which a note reaches Colour B. Default 1440 = one day.", "widget":"slider", "min":10, "max":10080, "step":10}'
+    - '// @input float hourThresholdMinutes = 60 {"hint":"Minutes remaining at which a note reaches Colour C. Default 60 = one hour.", "widget":"slider", "min":1, "max":1440, "step":1}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Emission per state"}'
+    - '// @ui {"widget":"label", "label":"Tune each state independently; one global value cannot serve both a deep blue and a hot orange."}'
+    - '// @input float recordingIntensity = 1.8 {"widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float settledIntensity = 1.6 {"widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float staticIntensity = 1.5 {"hint":"Notes with no reminder. Raise this if they read too dark.", "widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float intensityWeek = 1.6 {"hint":"Emission at Colour Week. Raise this if distant notes read too dark.", "widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float intensityDay = 1.4 {"hint":"Emission at Colour Day.", "widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float intensityHour = 1.2 {"hint":"Emission at Colour Hour.", "widget":"slider", "min":0, "max":4, "step":0.05}'
+    - '// @input float intensityDue = 1 {"hint":"Emission at Colour Due.", "widget":"slider", "min":0, "max":4, "step":0.05}'
+    - "// @ui {\"widget\":\"label\", \"label\":\"Colour ramps across the reminder's own lifetime: blue when set, orange when due.\"}"
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Reminders"}'
+    - '// @input float reminderCheckSeconds = 1 {"hint":"How often due reminders are checked, in seconds.", "widget":"slider", "min":0.2, "max":10, "step":0.1}'
+    - '// @input string alertCopy = "Reminder: {note}" {"hint":"Alert copy. {note} is replaced with the transcript."}'
+    - "// @input string noSpeechCopy = \"Didn't catch that — nothing saved\" {\"hint\":\"Shown briefly when a recording captured no speech and was discarded.\"}"
+    - "// @input float overdueAfterMinutes = 15 {\"hint\":\"Minutes past the reminder before a note is captioned 'past due' on the HUD. Colour is unaffected; the ramp already ends at Colour Due.\", \"widget\":\"slider\", \"min\":0, \"max\":240, \"step\":1}"
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Development"}'
+    - '// @input bool debugSimulateCapture {"hint":"Runs a scripted capture on start, with a synthetic mic level. Normal use: just click and hold in the preview."}'
+    - '// @input float debugRecordSeconds = 3 {"hint":"Seconds the simulated capture spends recording.", "widget":"slider", "min":0.5, "max":10, "step":0.5}'
+    - '// @input bool debugClearNotesOnStart {"hint":"Wipes all stored notes on start. Use once to reset, then turn back off."}'
+    - '// @input bool logHover {"hint":"Logs pointer-ray and orb hover activity. Development aid only."}'

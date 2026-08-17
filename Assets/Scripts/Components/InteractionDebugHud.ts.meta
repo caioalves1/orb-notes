@@ -1,0 +1,58 @@
+- !<AssetImportMetadata/89682691-4812-450d-b39c-47df4b497004>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> bdfc46c7-767a-45e1-a86c-3885684f5062
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> bdfc46c7-767a-45e1-a86c-3885684f5062
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 150364d2-9477-460c-a8a2-74cc056eaee2
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/150364d2-9477-460c-a8a2-74cc056eaee2>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 062d1d53-f369-4f92-bb57-17e2e6693ab1
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableDebugHud: false
+    noteManager: false
+    readout: false
+    refreshInterval: false
+    root: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - enableDebugHud: false
+      readout: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      root: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      noteManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      refreshInterval: 0.100000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input bool enableDebugHud {"hint":"Turn on to show the interaction readout."}'
+    - '// @input Component.Text readout {"hint":"Text component the readout is written into."}'
+    - '// @input SceneObject root {"hint":"Object holding the readout, hidden when disabled."}'
+    - '// @input AssignableType_1 noteManager {"hint":"Manager whose gesture state is reported."}'
+    - '// @input float refreshInterval = 0.1 {"hint":"Seconds between readout refreshes.", "widget":"slider", "min":0.05, "max":1, "step":0.05}'

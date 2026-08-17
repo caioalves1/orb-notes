@@ -1,0 +1,74 @@
+- !<AssetImportMetadata/4fab2869-0e11-49d1-a084-f782f7801e16>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 5a32adf0-2fb3-4c99-9413-683bdbd38dc4
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 5a32adf0-2fb3-4c99-9413-683bdbd38dc4
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> e81fde8e-9085-46c9-a766-270187702288
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/e81fde8e-9085-46c9-a766-270187702288>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 8b3fa193-7fbb-495f-aecc-e441245b61bc
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    camera: false
+    container: false
+    distance: false
+    enableDebugPanel: false
+    heightOffset: false
+    noteManager: false
+    orbTemplate: false
+    showLabels: false
+    simulatedAudioFloor: false
+    spacing: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - enableDebugPanel: false
+      orbTemplate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      container: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      noteManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      distance: !<float> 80.000000
+      spacing: !<float> 14.000000
+      heightOffset: !<float> 0.000000
+      showLabels: true
+      simulatedAudioFloor: 0.150000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input bool enableDebugPanel {"hint":"Turn on to show the tuning row. Leave off for normal use."}'
+    - '// @input SceneObject orbTemplate {"hint":"Orb Template to clone and to read tuning values from."}'
+    - '// @input SceneObject container {"hint":"Parent for the preview orbs."}'
+    - '// @input AssignableType_1 noteManager {"hint":"Supplies the urgency colours and horizon, so the preview matches the real thing."}'
+    - '// @input Component.Camera camera {"hint":"Camera the row is placed in front of."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input float distance = 80 {"hint":"Distance in front of the camera, in centimetres.", "widget":"slider", "min":30, "max":200, "step":5}'
+    - '// @input float spacing = 14 {"hint":"Horizontal gap between preview orbs, in centimetres.", "widget":"slider", "min":5, "max":40, "step":1}'
+    - '// @input float heightOffset {"hint":"Vertical offset of the row, in centimetres.", "widget":"slider", "min":-40, "max":40, "step":1}'
+    - '// @input bool showLabels = true {"hint":"Show a caption under each orb naming its state."}'
+    - '// @input float simulatedAudioFloor = 0.15 {"hint":"Synthetic mic level floor for the recording sample.", "widget":"slider", "min":0, "max":1, "step":0.05}'

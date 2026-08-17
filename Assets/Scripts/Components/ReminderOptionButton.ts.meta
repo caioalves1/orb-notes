@@ -1,0 +1,76 @@
+- !<AssetImportMetadata/dbba0acf-1648-4ad2-9616-cbf755d75e27>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 75fe96b3-9a5a-48f6-b7ec-27d5248c5f45
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 75fe96b3-9a5a-48f6-b7ec-27d5248c5f45
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 9fb3d340-e899-49f4-935a-bfce7fef0955
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/9fb3d340-e899-49f4-935a-bfce7fef0955>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 7ab17298-6afb-4b6d-9ef9-10a22ac781fe
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    absoluteHour: false
+    dayOffset: false
+    hoverColor: false
+    hoverScale: false
+    idleColor: false
+    interactable: false
+    kind: false
+    label: false
+    labelText: false
+    offsetMinutes: false
+    plate: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - label: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      labelText: 30 min
+      kind: relative
+      offsetMinutes: !<float> 30.000000
+      absoluteHour: !<float> 9.000000
+      dayOffset: !<float> 1.000000
+      interactable: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      plate: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+      idleColor: !<Vec4> {x: 0.120000, y: 0.160000, z: 0.240000, w: 0.850000}
+      hoverColor: !<Vec4> {x: 0.300000, y: 0.550000, z: 0.950000, w: 0.950000}
+      hoverScale: 1.080000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Component.Text label {"hint":"Text shown on the button."}'
+    - "// @input string labelText = \"30 min\" {\"hint\":\"Label copy, e.g. '30 min' or \\\"Don't remind me\\\".\"}"
+    - '// @input string kind = "relative" {"hint":"How this option resolves to a timestamp.", "widget":"combobox", "values":[{"label":"Relative offset", "value":"relative"}, {"label":"Next time on the clock", "value":"absoluteHour"}, {"label":"No reminder", "value":"none"}]}'
+    - "// @input float offsetMinutes = 30 {\"hint\":\"Minutes from now. Used when kind is 'relative'.\"}"
+    - "// @input float absoluteHour = 9 {\"hint\":\"Hour of day, 24h. Used when kind is 'absoluteHour'.\", \"widget\":\"slider\", \"min\":0, \"max\":23, \"step\":1}"
+    - "// @input float dayOffset = 1 {\"hint\":\"Days to add before applying the hour. Used when kind is 'absoluteHour'.\"}"
+    - '// @input AssignableType_1 interactable {"hint":"Interactable that receives the pinch. Defaults to one on this object."}'
+    - '// @input Component.MaterialMeshVisual plate {"hint":"Plate whose colour and scale respond to hover."}'
+    - '// @input vec4 idleColor = {0.12,0.16,0.24,0.85} {"hint":"Plate colour when idle.", "widget":"color"}'
+    - '// @input vec4 hoverColor = {0.3,0.55,0.95,0.95} {"hint":"Plate colour while hovered, so the option reads as selectable.", "widget":"color"}'
+    - '// @input float hoverScale = 1.08 {"hint":"Plate scale multiplier while hovered.", "widget":"slider", "min":1, "max":1.4, "step":0.01}'

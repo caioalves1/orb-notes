@@ -1,0 +1,78 @@
+- !<AssetImportMetadata/b2626f2a-a540-435f-ac98-e82ae09ea513>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> c0c03109-6960-474e-8344-f55e09871ee5
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> c0c03109-6960-474e-8344-f55e09871ee5
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> b13ca24a-70c1-4dd2-b1cb-22462a1f8d84
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/b13ca24a-70c1-4dd2-b1cb-22462a1f8d84>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 3a7b1472-2d24-4595-9a60-1b7fad3b9371
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    fallbackCopy: false
+    listeningCopy: false
+    noSpeechCopy: false
+    optionButtons: false
+    pickerRoot: false
+    promptCopy: false
+    promptLabel: false
+    root: false
+    silenceTerminationMs: false
+    statusLabel: false
+    voiceTimeoutSeconds: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - root: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      promptLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      statusLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      pickerRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      optionButtons: !<MappingBased.AssignableType_1[]>
+        []
+      promptCopy: "When should I remind you?"
+      listeningCopy: "Say a time, or pick one below"
+      fallbackCopy: "Didn't catch a time — pick one below"
+      noSpeechCopy: Pick a time below
+      silenceTerminationMs: !<float> 1500.000000
+      voiceTimeoutSeconds: !<float> 12.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject root {"hint":"Root object for the whole prompt. Hidden when idle."}'
+    - '// @input Component.Text promptLabel {"hint":"Main question copy."}'
+    - '// @input Component.Text statusLabel {"hint":"Echoes what was heard, and any parse failure."}'
+    - '// @input SceneObject pickerRoot {"hint":"Container for the manual picker options."}'
+    - '// @input AssignableType_1[] optionButtons {"hint":"Optional explicit option list. Leave empty to discover them under Picker."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input string promptCopy = "When should I remind you?" {"hint":"Question shown while listening."}'
+    - '// @input string listeningCopy = "Listening... say a time out loud" {"hint":"Shown under the question while the mic is open, to prompt speaking again."}'
+    - "// @input string fallbackCopy = \"Didn't catch that — pick a time below\" {\"hint\":\"Shown when the spoken phrase could not be resolved and the picker appears.\"}"
+    - '// @input string noSpeechCopy = "Pick a time below" {"hint":"Shown when speech is unavailable and the picker is the only option."}'
+    - '// @input float silenceTerminationMs = 1500 {"hint":"Silence, in ms, that ends the spoken response on its own.", "widget":"slider", "min":500, "max":5000, "step":100}'
+    - '// @input float voiceTimeoutSeconds = 12 {"hint":"Seconds before the prompt gives up on voice and waits on the picker.", "widget":"slider", "min":2, "max":30, "step":1}'

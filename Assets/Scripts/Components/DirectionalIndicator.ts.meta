@@ -1,0 +1,61 @@
+- !<AssetImportMetadata/e97da450-9aca-4e7c-8d64-ba8605c29ca5>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> b84258ad-c77d-4f53-a4f8-a915a5d3ecc6
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> b84258ad-c77d-4f53-a4f8-a915a5d3ecc6
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> aa7f3ab4-7c0e-4a7b-8cdc-df73a5348a9e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/aa7f3ab4-7c0e-4a7b-8cdc-df73a5348a9e>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 3fb449b3-210a-4e4a-97b3-31ffe3e01354
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    arrow: false
+    arrowVisual: false
+    camera: false
+    followRate: false
+    onScreenMargin: false
+    ringRadius: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      arrow: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      arrowVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+      ringRadius: !<float> 12.000000
+      onScreenMargin: 0.150000
+      followRate: !<float> 10.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Component.Camera camera {"hint":"Camera used to resolve view direction. Defaults to the main camera."}'
+    - '// @input SceneObject arrow {"hint":"Object that is rotated and positioned around the view centre."}'
+    - '// @input Component.MaterialMeshVisual arrowVisual {"hint":"Visual whose material alpha is faded. Optional."}'
+    - '// @input float ringRadius = 12 {"hint":"Radius of the arrow ring from view centre, in local units.", "widget":"slider", "min":1, "max":40, "step":0.5}'
+    - "// @input float onScreenMargin = 0.15 {\"hint\":\"Fraction of the screen considered 'in view'. Below this the arrow hides.\", \"widget\":\"slider\", \"min\":0, \"max\":1, \"step\":0.01}"
+    - '// @input float followRate = 10 {"hint":"How quickly the arrow follows the target direction.", "widget":"slider", "min":1, "max":30, "step":0.5}'
